@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bp1jmd2bpreae"]
+
+[ext_resource type="PackedScene" uid="uid://c7x623ry6xco6" path="res://sportscar.tscn" id="1_a202f"]
+[ext_resource type="PackedScene" uid="uid://ey1bhjs7q3ac" path="res://road.tscn" id="2_noarx"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_r4oxc"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2s2ic"]
+
+[sub_resource type="Sky" id="Sky_5uptp"]
+sky_material = SubResource("ProceduralSkyMaterial_2s2ic")
+
+[sub_resource type="Environment" id="Environment_r4oxc"]
+sky = SubResource("Sky_5uptp")
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)
+
+[node name="Node3D" type="Node3D" unique_id=2077296687]
+
+[node name="World" type="StaticBody3D" parent="." unique_id=1312772850]
+
+[node name="Boundary" type="CollisionShape3D" parent="World" unique_id=2129402276]
+shape = SubResource("WorldBoundaryShape3D_r4oxc")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=417135907]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08341026, 8.6973505, 0)
+omni_range = 15.856
+
+[node name="NissanGTR" parent="." unique_id=668205608 instance=ExtResource("1_a202f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.566512, -25.024115)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1714642553]
+environment = SubResource("Environment_r4oxc")
+
+[node name="Road" parent="." unique_id=2012918620 instance=ExtResource("2_noarx")]
+
+[node name="Road2" parent="." unique_id=1625987172 instance=ExtResource("2_noarx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.91364)
+
+[node name="Road3" parent="." unique_id=927919303 instance=ExtResource("2_noarx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -29.891937)
+
+[node name="Road4" parent="." unique_id=2022909438 instance=ExtResource("2_noarx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14.841573)
+
+[node name="Road5" parent="." unique_id=611485147 instance=ExtResource("2_noarx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.79835)

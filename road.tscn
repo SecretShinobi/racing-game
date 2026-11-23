@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ey1bhjs7q3ac"]
+
+[ext_resource type="ArrayMesh" uid="uid://b8lifmgwbykud" path="res://kenney_city-kit-roads/Models/OBJ format/road-driveway-double.obj" id="1_x0d2t"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3veuu"]
+points = PackedVector3Array(-0.5, 0, -0.5, -0.5, 0, 0.5, -0.5, 0.02, -0.5, 0.5, 0, -0.5, -0.5, 0.02, 0.5, 0.5, 0, 0.5, 0.5, 0.02, -0.5, 0.5, 0.02, 0.5)
+
+[node name="Road" type="StaticBody3D" unique_id=2012918620]
+
+[node name="RoadDrivewayDouble" type="MeshInstance3D" parent="." unique_id=1355333743]
+transform = Transform3D(-6.556708e-07, 0, 15, 0, 15, 0, -15, 0, -6.556708e-07, 0, 0, 0)
+mesh = ExtResource("1_x0d2t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2070599864]
+transform = Transform3D(-6.556708e-07, 0, 15, 0, 15, 0, -15, 0, -6.556708e-07, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_3veuu")
